@@ -287,7 +287,7 @@ void UAbilityTask_PushPawnScan::PerformTrace()
     }
 
 	// If we don't have a valid collision shape, we can't scan
-	FQuat ShapeRotation;
+	FQuat ShapeRotation = FQuat::Identity;
 	FCollisionShape CollisionShape = Pushee->GetPusheeCollisionShape(ShapeRotation);
 	const bool bValidShape = !CollisionShape.IsLine() && !CollisionShape.IsNearlyZero();
 	if (!ensureMsgf(bValidShape, TEXT("PushPawn: Pushee %s has an invalid collision shape!"), *AvatarActor->GetName()))

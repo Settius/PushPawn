@@ -13,8 +13,7 @@
  * Then, add the component to your pawn
  */
 UCLASS(Blueprintable, ClassGroup=(Custom), meta=(NotBlueprintSpawnableComponent))
-class PUSHPAWN_API UPusheeComponentHelper final
-	: public UPusheeComponent
+class PUSHPAWN_API UPusheeComponentHelper : public UPusheeComponent
 {
 	GENERATED_BODY()
 
@@ -74,8 +73,9 @@ public:
 	 * If the size changes during runtime, it can de-sync -- i.e. use the default shape size.
 	 * This means crouch, prone, etc. consideration is not supported by default. It may be possible to extend this.
 	 */
-	UFUNCTION(BlueprintPure, BlueprintImplementableEvent, Category=PushPawn, meta=(DisplayName="Get Pushee Collision Shape"))
+	UFUNCTION(BlueprintPure, BlueprintNativeEvent, Category=PushPawn, meta=(DisplayName="Get Pushee Collision Shape"))
 	FPushPawnCollisionShapeHelper K2_GetPusheeCollisionShape(FQuat& ShapeRotation) const;
+	FPushPawnCollisionShapeHelper K2_GetPusheeCollisionShape_Implementation(FQuat& ShapeRotation) const;
 	virtual FCollisionShape GetPusheeCollisionShape(FQuat& ShapeRotation) const override { return K2_GetPusheeCollisionShape(ShapeRotation).ToCollisionShape(); }
 
 protected:

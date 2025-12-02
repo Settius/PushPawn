@@ -99,15 +99,13 @@ void UPushStatics::GetPushDataFromEventData(const FGameplayEventData& EventData,
 	DistanceBetween = PushTargetData.Distance;
 
 	// Get the strength target data from the event data if available
-	if (const FGameplayAbilityTargetData* RawStrengthData = EventData.TargetData.Get(1))
-	{
-		const FPushPawnStrengthTargetData& PushStrengthTargetData = static_cast<const FPushPawnStrengthTargetData&>(*RawStrengthData);
-		
+	if (const FPushPawnStrengthTargetData* PushStrengthTargetData = static_cast<const FPushPawnStrengthTargetData*>(EventData.TargetData.Get(1)))
+	{		
 		// Extract strength scalar
-		StrengthScalar = PushStrengthTargetData.StrengthScalar;
+		StrengthScalar = PushStrengthTargetData->StrengthScalar;
 
 		// Extract strength override
-		bOverrideStrength = PushStrengthTargetData.bOverrideStrength;
+		bOverrideStrength = PushStrengthTargetData->bOverrideStrength;
 	}
 	else
 	{

@@ -7,8 +7,18 @@
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(PusheeComponentHelper)
 
+FPushPawnCollisionShapeHelper UPusheeComponentHelper::K2_GetPusheeCollisionShape_Implementation(FQuat& ShapeRotation) const
+{
+	if (!PawnOwner)
+	{
+		return FPushPawnCollisionShapeHelper();
+	}
+	
+	return K2_GetDefaultPusheeCollisionShape(PawnOwner, ShapeRotation);
+}
+
 FPushPawnCollisionShapeHelper UPusheeComponentHelper::K2_GetDefaultPusheeCollisionShape(const AActor* Actor,
-	FQuat& ShapeRotation, EPushCollisionType OptionalShapeType, USceneComponent* OptionalComponent) const
+                                                                                        FQuat& ShapeRotation, EPushCollisionType OptionalShapeType, USceneComponent* OptionalComponent) const
 {
 	if (!IsValid(Actor))
 	{

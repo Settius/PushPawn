@@ -13,8 +13,7 @@
  * Then, add the component to your pawn
  */
 UCLASS(Blueprintable, ClassGroup=(Custom), meta=(NotBlueprintSpawnableComponent))
-class PUSHPAWN_API UPusherComponentHelper final
-	: public UPusherComponent
+class PUSHPAWN_API UPusherComponentHelper : public UPusherComponent
 {
 	GENERATED_BODY()
 
@@ -42,7 +41,7 @@ public:
 	virtual bool CanPushPawn(const AActor* PusheeActor) const override { return K2_CanPushPawn(PusheeActor); }
 
 	/** @return Optional runtime strength scaling to change how much the pusher pushes the pushee */
-	UFUNCTION(BlueprintPure, BlueprintNativeEvent, Category=PushPawn, meta=(DisplayName="Get Pusher Strength Scalar"))
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category=PushPawn, meta=(DisplayName="Get Pusher Strength Scalar"))
 	float K2_GetPusherStrengthScalar() const;
 	float K2_GetPusherStrengthScalar_Implementation() const { return 1.f; }
 	virtual float GetPusherStrengthScalar() const override { return K2_GetPusherStrengthScalar(); }

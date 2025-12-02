@@ -14,9 +14,7 @@
  * Allows implementing logic on the component instead of the actor
  */
 UCLASS(Abstract)
-class PUSHPAWN_API UPusheeComponent
-	: public UPushPawnComponent
-	, public IPusheeInstigator
+class PUSHPAWN_API UPusheeComponent : public UPushPawnComponent, public IPusheeInstigator
 {
 	GENERATED_BODY()
 

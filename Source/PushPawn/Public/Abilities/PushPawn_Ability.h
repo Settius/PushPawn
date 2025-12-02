@@ -30,7 +30,7 @@ public:
 
 	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
 		const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags,
-		FGameplayTagContainer* OptionalRelevantTags) const override final;
+		FGameplayTagContainer* OptionalRelevantTags) const override;
 
 protected:
 	/** @return True if the ability was not ended or cancelled */
@@ -38,5 +38,5 @@ protected:
 	const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) { return true; }
 	
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
-		const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override final;
+		const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 };

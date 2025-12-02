@@ -9,9 +9,7 @@
 
 
 UCLASS(Abstract)
-class PUSHPAWN_API UPusherComponent
-	: public UPushPawnComponent
-	, public IPusherTarget
+class PUSHPAWN_API UPusherComponent : public UPushPawnComponent, public IPusherTarget
 {
 	GENERATED_BODY()
 

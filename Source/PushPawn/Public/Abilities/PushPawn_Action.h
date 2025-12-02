@@ -16,8 +16,7 @@ class ACharacter;
  * BP should only be used for changing parameters, not for logic.
  */
 UCLASS(Blueprintable)
-class PUSHPAWN_API UPushPawn_Action // final -- Make sure your subclass is marked final, do not have non-final classes for this ability
-	: public UPushPawn_Action_Base
+class PUSHPAWN_API UPushPawn_Action : public UPushPawn_Action_Base
 {
 	GENERATED_BODY()
 

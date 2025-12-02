@@ -13,7 +13,7 @@
  * BP should only be used for changing parameters, not for logic.
  */
 UCLASS(Blueprintable)
-class PUSHPAWN_API UPushPawn_Scan final : public UPushPawn_Scan_Base
+class PUSHPAWN_API UPushPawn_Scan : public UPushPawn_Scan_Base
 {
 	GENERATED_BODY()
 
